@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 7}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 521}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -67,10 +67,10 @@ MonoBehaviour:
     y: 0
     width: 706
     height: 635
-  m_MinSize: {x: 202, y: 421}
-  m_MaxSize: {x: 4002, y: 8021}
+  m_MinSize: {x: 202, y: 442}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 1214
+  controlID: 139
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 471}
   m_MaxSize: {x: 10004, y: 14021}
   vertical: 1
-  controlID: 80
+  controlID: 117
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -230,10 +230,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 635
-  m_MinSize: {x: 713, y: 471}
-  m_MaxSize: {x: 18008, y: 14021}
+  m_MinSize: {x: 711, y: 471}
+  m_MaxSize: {x: 18006, y: 14021}
   vertical: 0
-  controlID: 1213
+  controlID: 138
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -278,8 +278,8 @@ MonoBehaviour:
     y: 0
     width: 317
     height: 635
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -390,25 +390,25 @@ MonoBehaviour:
     height: 262
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 202f0000
-    m_LastClickedID: 12064
-    m_ExpandedIDs: 44edffff3cf3ffff7ef4ffffaaf9ffffb6ffffff00000000f22e0000
+    m_SelectedIDs: 48070000
+    m_LastClickedID: 0
+    m_ExpandedIDs: c0d4ffffc4e0ffff92ebffff1afcffff00000000ec2d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: AtacarConProyectilAltamenteExplosivo (1)
+      m_OriginalName: AtacarConProyectilAltamenteExplosivo (1)
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -11072
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 6}
     m_SearchString: 
   m_ExpandedScenes:
   - NuevaEscena
@@ -442,14 +442,14 @@ MonoBehaviour:
     width: 704
     height: 295
   m_SceneLighting: 1
-  lastFramingTime: 68.90137957440818
+  lastFramingTime: 3139.097482079048
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 1
   m_Position:
-    m_Target: {x: 0.31884432, y: 5.6310654, z: -3.654417}
+    m_Target: {x: 532, y: 80.5, z: 0}
     speed: 2
-    m_Value: {x: 0.31884432, y: 5.6310654, z: -3.654417}
+    m_Value: {x: 532, y: 80.5, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -476,9 +476,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.24901058, y: 0.06878816, z: -0.017733859, w: -0.9658925}
   m_Size:
-    m_Target: 12.427502
+    m_Target: 431.8463
     speed: 2
-    m_Value: 12.427502
+    m_Value: 431.8463
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -562,10 +562,10 @@ MonoBehaviour:
   m_LastProjectPath: C:\Users\luchovisma\Documents\UnityProyects\NaVR
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 31}
-    m_SelectedIDs: 76290000
-    m_LastClickedID: 10614
-    m_ExpandedIDs: 00000000a426000086270000002900003c2a0000aa2b0000ac2b0000ae2b0000b02b0000ffffff7f
+    scrollPos: {x: 0, y: 22}
+    m_SelectedIDs: 7a290000
+    m_LastClickedID: 10618
+    m_ExpandedIDs: 00000000a8260000cc2600008a27000004290000402a00004e2c0000502c0000522c0000542c0000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -593,7 +593,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a426000086270000002900003c2a0000aa2b0000ac2b0000ae2b0000b02b0000
+    m_ExpandedIDs: 00000000a82600008a27000004290000402a00004e2c0000502c0000522c0000542c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -624,18 +624,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000c04b000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: NuevaEscena
-      m_OriginalName: NuevaEscena
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 11370
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 4}
     m_CreateAssetUtility:
@@ -674,7 +674,7 @@ MonoBehaviour:
     y: 92
     width: 315
     height: 614
-  m_ScrollPosition: {x: 0, y: 292.95508}
+  m_ScrollPosition: {x: 0, y: 115.95508}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 160

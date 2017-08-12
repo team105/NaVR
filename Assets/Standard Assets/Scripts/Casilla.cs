@@ -33,4 +33,16 @@ public class Casilla : ScriptableObject {
 	public int GetEstado () {
 		return this.estado;
 	}
+
+	public void SetFila (int fila) {
+		this.fila = fila;	
+	}
+
+	public void SetColumna (int columna) {
+		this.columna = columna;
+	}
+
+	public void SetEstado (int estado) {
+		this.estado = estado;
+	}
 }
