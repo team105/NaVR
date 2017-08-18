@@ -72,8 +72,10 @@
      <Compile Include="Assets\Standard Assets\Environment\Water\Water\Scripts\Water.cs" />
      <Compile Include="Assets\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
      <Compile Include="Assets\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\AdministradorPartida.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\Casilla.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\Habilidad.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Tablero.cs" />
      <Compile Include="Assets\Standard Assets\Utility\ActivateTrigger.cs" />
      <Compile Include="Assets\Standard Assets\Utility\AlphaButtonClickMask.cs" />
      <Compile Include="Assets\Standard Assets\Utility\AutoMobileShaderSwitch.cs" />
