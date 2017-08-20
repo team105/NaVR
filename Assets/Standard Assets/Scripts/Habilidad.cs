@@ -133,10 +133,17 @@ public class Habilidad : ScriptableObject {
 	public void UtilizarManiobrasEvasivas () {
 	}
 
-	public void CrearBarcoFantasma () {
+	public void CrearBarcoFantasma (Tablero tablero, Barco barcoFantasma) {
+		Casilla[] posicionesOcupadas = barcoFantasma.GetPosicionesOcupadas ();
+		for (int i=0; i<posicionesOcupadas.Length; i++) {
+			tablero.SetHayBarcoFantasma (posicionesOcupadas[i].GetFila (), posicionesOcupadas[i].GetColumna (), true);
+		}
 	}
 
-	public void ReforzarArmadura () {
+	public void ReforzarArmadura (Tablero tablero) {
+		if (tablero.GetHayCasillaReforzada (0, 0) != true) { //Deberia hacer un GetFila y GetColumna de la casilla
+			tablero.SetHayCasillaReforzada (0, 0, true); //Deberia hacerlo sobre un GetFila y GetColumna de la casilla
+		}
 	}
 
 }

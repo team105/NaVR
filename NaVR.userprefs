@@ -1,11 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp-firstpass.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\Habilidad.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\AdministradorPartida.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Scripts\Habilidad.cs" Line="15" Column="68" />
-      <File FileName="Assets\Standard Assets\Scripts\Casilla.cs" Line="23" Column="3" />
-      <File FileName="Assets\Standard Assets\Scripts\Tablero.cs" Line="7" Column="24" />
-      <File FileName="Assets\Standard Assets\Scripts\AdministradorPartida.cs" Line="10" Column="36" />
+      <File FileName="Assets\Standard Assets\Scripts\Habilidad.cs" Line="139" Column="110" />
+      <File FileName="Assets\Standard Assets\Scripts\Casilla.cs" Line="7" Column="19" />
+      <File FileName="Assets\Standard Assets\Scripts\Tablero.cs" Line="40" Column="5" />
+      <File FileName="Assets\Standard Assets\Scripts\AdministradorPartida.cs" Line="13" Column="135" />
+      <File FileName="Assets\Standard Assets\Scripts\Barco.cs" Line="12" Column="66" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

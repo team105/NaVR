@@ -73,6 +73,7 @@
      <Compile Include="Assets\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
      <Compile Include="Assets\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\AdministradorPartida.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Barco.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\Casilla.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\Habilidad.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\Tablero.cs" />

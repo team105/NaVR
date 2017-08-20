@@ -7,6 +7,9 @@ public class Casilla : ScriptableObject {
 	private int fila;
 	private int columna;
 	private int estado;
+	private bool hayBarco;
+	private bool hayCasillaReforzada;
+	private bool hayBarcoFantasma;
 
 	// Use this for initialization
 	public void Init (int fila, int columna, int estado) {
@@ -34,6 +37,18 @@ public class Casilla : ScriptableObject {
 		return this.estado;
 	}
 
+	public bool GetHayBarco () {
+		return this.hayBarco;
+	}
+
+	public bool GetHayCasillaReforzada () {
+		return this.hayCasillaReforzada;
+	}
+
+	public bool GetHayBarcoFantasma () {
+		return this.hayBarcoFantasma;
+	}
+
 	public void SetFila (int fila) {
 		this.fila = fila;	
 	}
@@ -45,4 +60,17 @@ public class Casilla : ScriptableObject {
 	public void SetEstado (int estado) {
 		this.estado = estado;
 	}
+
+	public void SetHayBarco (bool hayBarco) {
+		this.hayBarco = hayBarco;
+	}
+
+	public void SetHayCasillaReforzada (bool hayCasillaReforzada) {
+		this.hayCasillaReforzada = hayCasillaReforzada;
+	}
+
+	public void SetHayBarcoFantasma (bool hayBarcoFantasma) {
+		this.hayBarcoFantasma = hayBarcoFantasma;
+	}
+		
 }
