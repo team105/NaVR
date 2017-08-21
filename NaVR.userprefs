@@ -2,11 +2,11 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\AdministradorPartida.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Scripts\Habilidad.cs" Line="139" Column="110" />
-      <File FileName="Assets\Standard Assets\Scripts\Casilla.cs" Line="7" Column="19" />
-      <File FileName="Assets\Standard Assets\Scripts\Tablero.cs" Line="40" Column="5" />
-      <File FileName="Assets\Standard Assets\Scripts\AdministradorPartida.cs" Line="13" Column="135" />
-      <File FileName="Assets\Standard Assets\Scripts\Barco.cs" Line="12" Column="66" />
+      <File FileName="Assets\Standard Assets\Scripts\Habilidad.cs" Line="6" Column="42" />
+      <File FileName="Assets\Standard Assets\Scripts\Casilla.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Scripts\Tablero.cs" Line="49" Column="40" />
+      <File FileName="Assets\Standard Assets\Scripts\AdministradorPartida.cs" Line="95" Column="92" />
+      <File FileName="Assets\Standard Assets\Scripts\Barco.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

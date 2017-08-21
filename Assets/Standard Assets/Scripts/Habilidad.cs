@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class Constantes {
-	public const int NO_ATACADO_AGUA = 0;
+	public const int TODAVIA_NO_ATACADO = 0;
 	public const int YA_ATACADO_AGUA = 1;
-	public const int NO_ATACADO_BARCO = 2;
-	public const int YA_ATACADO_BARCO = 3;
+	public const int YA_ATACADO_BARCO = 2;
 }
 
 public class Habilidad : ScriptableObject {
@@ -22,27 +21,29 @@ public class Habilidad : ScriptableObject {
 		return data;
 	}
 
-	public int AtacarUnaPosicion (Tablero tablero, Casilla casilla = null) {	//Cuando lo hagamos funcionar deberia recibir de parametro un objeto Casilla 
+	public int AtacarUnaPosicion (Tablero tableroAtaque, Tablero tableroPosicion, Casilla casilla = null) {	//Cuando lo hagamos funcionar deberia recibir de parametro un objeto Casilla 
 		//casilla = Casilla.CreateInstance(3, 4, 1); //Hardcodeado para prueba, descomentar para probar este ataque
-		if (tablero.GetEstadoCasilla (casilla.GetFila (), casilla.GetColumna ()) == Constantes.NO_ATACADO_BARCO) {
-			tablero.SetEstadoCasilla (casilla.GetFila (), casilla.GetColumna (), Constantes.YA_ATACADO_BARCO); //Ataque exitoso a un barco
+		int fila = casilla.GetFila ();
+		int columna = casilla.GetColumna ();
+		if (tableroPosicion.GetHayBarco (fila, columna) == true) {
+			tableroAtaque.SetEstadoCasilla (fila, columna, Constantes.YA_ATACADO_BARCO); //Ataque exitoso a un barco
 			return 1;
 		}
-		else if (tablero.GetEstadoCasilla (casilla.GetFila (), casilla.GetColumna ()) == Constantes.NO_ATACADO_AGUA) {
-			tablero.SetEstadoCasilla (casilla.GetFila (), casilla.GetColumna (), Constantes.YA_ATACADO_AGUA); //Ataque fallido que impacto en agua
+		else if (tableroPosicion.GetHayBarco (fila, columna) == false) {
+			tableroAtaque.SetEstadoCasilla (fila, columna, Constantes.YA_ATACADO_AGUA); //Ataque fallido que impacto en agua
 			return 0;
 		}
 		return -1;
 	}
 
-	public void AtacarDosPosiciones (Tablero tablero) { //Cuando lo hagamos funcionar deberia recibir de parametro dos objetos Casilla
-		Casilla casilla1 = Casilla.CreateInstance(7, 8, 1); //Hardcodeado para prueba
-		Casilla casilla2 = Casilla.CreateInstance(7, 9, 1); //Hardcodeado para prueba
-		this.AtacarUnaPosicion (tablero, casilla1);
-		this.AtacarUnaPosicion (tablero, casilla2);
+	public void AtacarDosPosiciones (Tablero tableroAtaque, Tablero tableroPosicion) { //Cuando lo hagamos funcionar deberia recibir de parametro dos objetos Casilla
+		Casilla casilla1 = tableroPosicion.GetCasilla (7,8); //Hardcodeado para prueba
+		Casilla casilla2 = tableroPosicion.GetCasilla (7,9); //Hardcodeado para prueba
+		this.AtacarUnaPosicion (tableroAtaque, tableroPosicion, casilla1);
+		this.AtacarUnaPosicion (tableroAtaque, tableroPosicion, casilla2);
 	}
 
-	public void AtacarConArtilleriaRapida (Tablero tablero) { //Podriamos recibir las dos casillas de las puntas y usar columnas y filas para calcular el area
+	public void AtacarConArtilleriaRapida (Tablero tableroAtaque, Tablero tableroPosicion) { //Podriamos recibir las dos casillas de las puntas y usar columnas y filas para calcular el area
 		Casilla casilla1 = Casilla.CreateInstance(1, 1, 1);//Hardcodeado para prueba
 		Casilla casilla2 = Casilla.CreateInstance(6, 6, 1); //Hardcodeado para prueba
 		int[] area = new int[25];
@@ -61,49 +62,49 @@ public class Habilidad : ScriptableObject {
 				if (area [k] == 1) {
 					casillaAtaque.SetFila (casilla1.GetFila () + i);
 					casillaAtaque.SetColumna (casilla1.GetColumna () + j);
-					this.AtacarUnaPosicion (tablero, casillaAtaque);
+					this.AtacarUnaPosicion (tableroAtaque, tableroPosicion, casillaAtaque);
 				}
 				k++;
 			}
 		}
 	}
 
-	public void AtacarConProyectilAltamenteExplosivo(Tablero tablero) { //Recibe solo una posicion e impacta en las 4 cercanas, si es posible
+	public void AtacarConProyectilAltamenteExplosivo(Tablero tableroAtaque, Tablero tableroPosicion) { //Recibe solo una posicion e impacta en las 4 cercanas, si es posible
 		Casilla casilla = Casilla.CreateInstance(5, 6, 1); //Hardcodeado para prueba, Ataque completo
 		Casilla casillaAtaque = Casilla.CreateInstance(0, 0, 1);
 		//Casilla casilla = Casilla.CreateInstance(0, 3, 1); //Hardcodeado para prueba, Ataque sin extremo superior
 		//Casilla casilla = Casilla.CreateInstance(9, 6, 1); //Hardcodeado para prueba, Ataque sin extremo inferior
 		//Casilla casilla = Casilla.CreateInstance(4, 0, 1); //Hardcodeado para prueba, Ataque sin extremo izquierdo
 		//Casilla casilla = Casilla.CreateInstance(5, 9, 1); //Hardcodeado para prueba, Ataque sin extremo derecho
-		this.AtacarUnaPosicion (tablero, casilla);
+		this.AtacarUnaPosicion (tableroAtaque, tableroPosicion, casilla);
 		if (casilla.GetFila () != 0) {
 			casillaAtaque.SetFila (casilla.GetFila () - 1);
 			casillaAtaque.SetColumna (casilla.GetColumna ());
-			this.AtacarUnaPosicion (tablero, casillaAtaque);	
+			this.AtacarUnaPosicion (tableroAtaque, tableroPosicion, casillaAtaque);	
 		}
 		if (casilla.GetFila () != 9) {
 			casillaAtaque.SetFila (casilla.GetFila () + 1);
 			casillaAtaque.SetColumna (casilla.GetColumna ());
-			this.AtacarUnaPosicion (tablero, casillaAtaque);	
+			this.AtacarUnaPosicion (tableroAtaque, tableroPosicion, casillaAtaque);	
 		}
 		if (casilla.GetColumna () != 0) {
 			casillaAtaque.SetFila (casilla.GetFila ());
 			casillaAtaque.SetColumna (casilla.GetColumna () - 1);
-			this.AtacarUnaPosicion (tablero, casillaAtaque);	
+			this.AtacarUnaPosicion (tableroAtaque, tableroPosicion, casillaAtaque);	
 		}
 		if (casilla.GetColumna () != 9) {
 			casillaAtaque.SetFila (casilla.GetFila ());
 			casillaAtaque.SetColumna (casilla.GetColumna () + 1);
-			this.AtacarUnaPosicion (tablero, casillaAtaque);
+			this.AtacarUnaPosicion (tableroAtaque, tableroPosicion, casillaAtaque);
 		}
 	}
 
-	public void AtacarConTorpedo (Tablero tablero) {
+	public void AtacarConTorpedo (Tablero tableroAtaque, Tablero tableroPosicion) {
 		Casilla casilla = Casilla.CreateInstance(0, 8, 1); //Hardcodeado para prueba, le pasariamos directamente una columna
 		Casilla casillaAtaque = Casilla.CreateInstance(0, 0, 1);
 		//this.tablero [ 2 , casilla.GetColumna ()] = 2; //Hardcodeado para simular que hay un barco en esa posicion
 		int posicionFila = 0;
-		while (posicionFila < 10 && tablero.GetEstadoCasilla (posicionFila, casilla.GetColumna ()) != 2 ) {
+		while (posicionFila < 10 && tableroPosicion.GetEstadoCasilla (posicionFila, casilla.GetColumna ()) != 2 ) {
 			posicionFila++;
 		}
 		if (posicionFila == 10) {
@@ -112,11 +113,11 @@ public class Habilidad : ScriptableObject {
 		}
 		casillaAtaque.SetFila (posicionFila);
 		casillaAtaque.SetColumna (casilla.GetColumna ());
-		if (this.AtacarUnaPosicion (tablero, casillaAtaque) == 1) {
+		if (this.AtacarUnaPosicion (tableroAtaque, tableroPosicion, casillaAtaque) == 1) {
 			posicionFila++;
 			if (posicionFila < 10) {
 				casillaAtaque.SetFila (posicionFila);
-				this.AtacarUnaPosicion (tablero, casillaAtaque);
+				this.AtacarUnaPosicion (tableroAtaque, tableroPosicion, casillaAtaque);
 			}
 		}
 	}
@@ -133,16 +134,16 @@ public class Habilidad : ScriptableObject {
 	public void UtilizarManiobrasEvasivas () {
 	}
 
-	public void CrearBarcoFantasma (Tablero tablero, Barco barcoFantasma) {
+	public void CrearBarcoFantasma (Tablero tableroPosicion, Barco barcoFantasma) {
 		Casilla[] posicionesOcupadas = barcoFantasma.GetPosicionesOcupadas ();
 		for (int i=0; i<posicionesOcupadas.Length; i++) {
-			tablero.SetHayBarcoFantasma (posicionesOcupadas[i].GetFila (), posicionesOcupadas[i].GetColumna (), true);
+			tableroPosicion.SetHayBarcoFantasma (posicionesOcupadas[i].GetFila (), posicionesOcupadas[i].GetColumna (), true);
 		}
 	}
 
-	public void ReforzarArmadura (Tablero tablero) {
-		if (tablero.GetHayCasillaReforzada (0, 0) != true) { //Deberia hacer un GetFila y GetColumna de la casilla
-			tablero.SetHayCasillaReforzada (0, 0, true); //Deberia hacerlo sobre un GetFila y GetColumna de la casilla
+	public void ReforzarArmadura (Tablero tableroPosicion) {
+		if (tableroPosicion.GetHayCasillaReforzada (0, 0) != true) { //Deberia hacer un GetFila y GetColumna de la casilla
+			tableroPosicion.SetHayCasillaReforzada (0, 0, true); //Deberia hacerlo sobre un GetFila y GetColumna de la casilla
 		}
 	}
 

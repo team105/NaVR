@@ -45,6 +45,10 @@ public class Tablero : ScriptableObject {
 		return this.casillas.Length;
 	}
 
+	public Casilla GetCasilla (int fila, int columna) {
+		return this.casillas [fila, columna];
+	}
+
 	public int GetEstadoCasilla (int fila, int columna) {
 		return this.casillas [fila, columna].GetEstado ();
 	}
